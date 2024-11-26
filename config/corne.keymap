@@ -10,48 +10,43 @@
 #include <dt-bindings/zmk/mouse.h>
 
 / {
-        keymap {
-                compatible = "zmk,keymap";
+    keymap {
+        compatible = "zmk,keymap";
 
-                default_layer {
-// -----------------------------------------------------------------------------------------
-// |  TAB |  Q  |  W  |  E  |  R  |  T  |   |  Y  |  U   |  I  |  O  |  P  | BSPC |
-// | CTRL |  A  |  S  |  D  |  F  |  G  |   |  H  |  J   |  K  |  L  |  ;  |  '   |
-// | SHFT |  Z  |  X  |  C  |  V  |  B  |   |  N  |  M   |  ,  |  .  |  /  | ESC  |
-//                    | GUI | LWR | SPC |   | ENT | RSE  | ALT |
-                        bindings = <
-   &kp TAB   &kp Q &kp W &kp E &kp R &kp T   &kp Y &kp U  &kp I     &kp O   &kp P    &kp BSPC
-   &kp LCTRL &kp A &kp S &kp D &kp F &kp G   &kp H &kp J  &kp K     &kp L   &kp SEMI &kp SQT
-   &kp LSHFT &kp Z &kp X &kp C &kp V &kp B   &kp N &kp M  &kp COMMA &kp DOT &kp FSLH &kp ESC
-                  &kp LGUI &mo 1 &kp SPACE   &kp RET &mo 2 &kp RALT
-                        >;
-                };
-                lower_layer {
-// -----------------------------------------------------------------------------------------
-// |  TAB |  1  |  2  |  3  |  4  |  5  |   |  6  |  7  |  8  |  9  |  0  | BSPC |
-// | BTCLR| BT1 | BT2 | BT3 | BT4 | BT5 |   | LFT | DWN |  UP | RGT |     |      |
-// | SHFT |     |     |     |     |     |   |     |     |     |     |     |      |
-//                    | GUI |     | SPC |   | ENT |     | ALT |
-                        bindings = <
-   &kp TAB    &kp N1       &kp N2       &kp N3       &kp N4       &kp N5         &kp N6   &kp N7   &kp N8 &kp N9    &kp N0 &kp BSPC
-   &bt BT_CLR &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4   &kp LEFT &kp DOWN &kp UP &kp RIGHT &trans &trans
-   &kp LSHFT  &trans       &trans       &trans       &trans       &trans         &trans   &trans   &trans &trans    &trans &trans
-                                    &kp LGUI     &trans       &kp SPACE      &kp RET  &trans   &kp RALT
-                        >;
-                };
-
-                raise_layer {
-// -----------------------------------------------------------------------------------------
-// |  TAB |  !  |  @  |  #  |  $  |  %  |   |  ^  |  &  |  *  |  (  |  )  | BSPC |
-// | CTRL |     |     |     |     |     |   |  -  |  =  |  [  |  ]  |  \  |  `   |
-// | SHFT |     |     |     |     |     |   |  _  |  +  |  {  |  }  | "|" |  ~   |
-//                    | GUI |     | SPC |   | ENT |     | ALT |
-                        bindings = <
-   &kp  TAB  &kp EXCL &kp AT &kp HASH &kp DLLR &kp PRCNT   &kp CARET &kp AMPS  &kp ASTRK &kp LPAR &kp RPAR &kp BSPC
-   &kp LCTRL &trans   &trans &trans   &trans   &trans      &kp MINUS &kp EQUAL &kp LBKT  &kp RBKT &kp BSLH &kp GRAVE
-   &kp LSHFT &trans   &trans &trans   &trans   &trans      &kp UNDER &kp PLUS  &kp LBRC  &kp RBRC &kp PIPE &kp TILDE
-                             &kp LGUI &trans   &kp SPACE   &kp RET   &trans    &kp RALT
-                        >;
-                };
+        base_mouse_and_num {
+            bindings = <
+&kp TAB                  &trans        &trans       &trans         &trans      &mkp MB1     &kp NUMBER_7  &kp NUMBER_8  &kp NUMBER_9  &kp NUMBER_0  &kp COMMA        &kp DOT
+&mt CAPSLOCK LEFT_SHIFT  &kp LEFT      &kp UP       &kp DOWN       &kp RIGHT   &mkp MCLK    &kp N4        &kp N5        &kp NUMBER_6  &kp EQUAL     &kp KP_MULTIPLY  &kp SINGLE_QUOTE
+&lt 1 LCTRL              &kp LEFT_ALT  &kp PAGE_UP  &kp PAGE_DOWN  &kp ESC     &mkp MB2     &kp N1        &kp N2        &kp N3        &kp MINUS     &kp KP_DIVIDE    &kp BSPC
+                                                    &kp RWIN       &kp K_MENU  &kp SPACE    &kp ENTER     &to 1         &tog 0
+            >;
         };
+
+        layer_2 {
+            bindings = <
+&trans  &kp SINGLE_QUOTE  &kp COMMA  &kp DOT  &kp P   &kp Y     &kp F   &kp G  &kp C   &kp R  &kp L  &kp BSPC
+&trans  &kp A             &kp O      &kp E    &kp U   &kp I     &kp D   &kp H  &kp T   &kp N  &kp S  &kp MINUS
+&trans  &trans            &kp SEMI   &kp Q    &kp J   &kp K     &kp X   &kp B  &kp M   &kp W  &kp V  &kp Z
+                                     &trans   &trans  &trans    &trans  &to 2  &trans
+            >;
+        };
+
+        other {
+            bindings = <
+&trans  &bt BT_NXT  &bt BT_PRV  &bt BT_CLR  &trans  &trans    &kp F1  &kp F2   &kp F3   &kp F4   &kp BACKSLASH  &kp ESC
+&trans  &trans      &trans      &trans      &trans  &trans    &kp F5  &kp F6   &kp F7   &kp F8   &kp LBKT       &kp RBKT
+&trans  &trans      &kp SEMI    &kp TILDE   &trans  &trans    &kp F9  &kp F10  &kp F11  &kp F12  &kp NUHS       &kp DEL
+                                &trans      &trans  &trans    &trans  &to 3    &trans
+            >;
+        };
+
+        Minecraft {
+            bindings = <
+&trans     &kp ESC  &kp F4  &kp W  &kp F3  &none       &none     &none  &none   &kp N1  &kp N2  &kp N3
+&trans     &none    &kp A   &kp S  &kp D   &none       &none     &none  &none   &kp N4  &kp N5  &kp N6
+&kp LCTRL  &none    &none   &none  &none   &none       &none     &none  &none   &kp N7  &kp N8  &kp N9
+                            &none  &none   &mkp MB1    &mkp MB2  &none  &trans
+            >;
+        };
+    };
 };
