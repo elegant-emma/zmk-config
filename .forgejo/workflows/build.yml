@@ -8,4 +8,4 @@ jobs:
         uses: "/bin/bash apt update && apt install pip3 -y"
 
       - name: build_firmware
-        uses: 
+        uses: e2mau/zmk/.github/workflows/build-user-config.yml@main
