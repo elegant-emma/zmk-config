@@ -1,0 +1,11 @@
+on: [push, pull_request, workflow_dispatch]
+
+jobs:
+  build:
+    runs-on: ubuntu
+    steps:
+      - name: pip_install
+        uses: "/bin/bash apt update && apt install pip3 -y"
+
+      - name: build_firmware
+        uses: 
