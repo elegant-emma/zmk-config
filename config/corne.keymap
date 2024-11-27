@@ -15,14 +15,14 @@
 
         base_mouse_and_num {
             bindings = <
-&kp TAB                  &none         &none        &none          &none      &mkp MB1     &kp NUMBER_7  &kp NUMBER_8  &kp NUMBER_9  &kp NUMBER_0  &kp COMMA        &kp DOT
-&mt CAPSLOCK LEFT_SHIFT  &kp LEFT      &kp UP       &kp DOWN       &kp RIGHT   &mkp MCLK    &kp N4        &kp N5        &kp NUMBER_6  &kp EQUAL     &kp KP_MULTIPLY  &kp SINGLE_QUOTE
-&lt 1 LCTRL              &kp LEFT_ALT  &kp PAGE_UP  &kp PAGE_DOWN  &kp ESC     &mkp MB2     &kp N1        &kp N2        &kp N3        &kp MINUS     &kp KP_DIVIDE    &kp BSPC
+&kp TAB                &none         &none        &none          &none      &mkp MB1     &kp NUMBER_7  &kp NUMBER_8  &kp NUMBER_9  &kp NUMBER_0  &kp COMMA        &kp DOT
+&kp LEFT_SHIFT         &kp LEFT      &kp UP       &kp DOWN       &kp RIGHT   &mkp MCLK    &kp N4        &kp N5        &kp NUMBER_6  &kp EQUAL     &kp KP_MULTIPLY  &kp SINGLE_QUOTE
+&kp LCTRL              &kp LEFT_ALT  &kp PAGE_UP  &kp PAGE_DOWN  &kp ESC     &mkp MB2     &kp N1        &kp N2        &kp N3        &kp MINUS     &kp KP_DIVIDE    &kp BSPC
                                                     &kp RWIN       &kp K_MENU  &kp SPACE    &kp ENTER     &to 1         &to 0
             >;
         };
 
-        layer_2 {
+        letters {
             bindings = <
 &trans  &kp SINGLE_QUOTE  &kp COMMA  &kp DOT  &kp P   &kp Y     &kp F   &kp G  &kp C   &kp R  &kp L  &kp BSPC
 &trans  &kp A             &kp O      &kp E    &kp U   &kp I     &kp D   &kp H  &kp T   &kp N  &kp S  &kp MINUS
