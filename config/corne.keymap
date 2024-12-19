@@ -4,10 +4,11 @@
  * SPDX-License-Identifier: MIT
  */
 
+#include <dt-bindings/zmk/mouse.h>
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/keys.h>
-#include <dt-bindings/zmk/mouse.h>
+#include <dt-bindings/zmk/pointing.h>
 
 / {
     keymap {
@@ -36,7 +37,7 @@
 &trans  &bt BT_NXT  &bt BT_PRV  &bt BT_CLR  &trans  &trans    &kp F1  &kp F2   &kp F3   &kp F4   &kp BACKSLASH  &kp ESC
 &trans  &trans      &trans      &trans      &trans  &trans    &kp F5  &kp F6   &kp F7   &kp F8   &kp LBKT       &kp RBKT
 &trans  &trans      &kp SEMI    &kp TILDE   &trans  &trans    &kp F9  &kp F10  &kp F11  &kp F12  &kp NUHS       &kp DEL
-                                &trans      &trans  &trans    &trans  &to 3    &trans
+                                &trans      &trans  &trans    &trans  &to 4    &trans
             >;
         };
 
@@ -54,7 +55,7 @@
 &trans  &kp FSLH       &kp LBKT          &kp RBKT       &kp BSLH     &kp APOS             &kp EXCLAMATION  &kp DOLLAR  &kp HASH  &kp CARET  &trans  &trans
 &trans  &kp MINUS      &kp EQUAL         &kp AMPERSAND  &kp PERCENT  &kp DOUBLE_QUOTES    &kp ASTERISK     &trans      &trans    &trans     &trans  &trans
 &trans  &kp LESS_THAN  &kp GREATER_THAN  &kp PERIOD     &none        &kp SINGLE_QUOTE     &trans           &trans      &trans    &trans     &trans  &trans
-                                         &trans         &trans       &trans               &trans           &trans      &trans
+                                         &trans         &trans       &trans               &trans           &to 3       &trans
             >;
         };
     };
